@@ -1,0 +1,215 @@
+# File: requirements.txt
+# Python dependencies for Premium AI SEO Audit ($997 model)
+
+# =============================================================================
+# CORE WEB FRAMEWORK
+# =============================================================================
+Flask==2.3.3
+Flask-CORS==4.0.0
+
+# =============================================================================
+# HTTP REQUESTS & WEB SCRAPING
+# =============================================================================
+requests==2.31.0
+beautifulsoup4==4.12.2
+lxml==4.9.3
+urllib3==2.0.7
+
+# =============================================================================
+# AI & MACHINE LEARNING
+# =============================================================================
+openai==0.28.1
+# Alternative: openai==1.3.0 (for newer API version)
+
+# =============================================================================
+# PAYMENT PROCESSING
+# =============================================================================
+stripe==7.8.0
+
+# =============================================================================
+# PDF GENERATION & REPORTING
+# =============================================================================
+reportlab==4.0.4
+Pillow==10.1.0
+
+# =============================================================================
+# EMAIL & COMMUNICATION
+# =============================================================================
+# Built-in smtplib used for email (no additional dependencies)
+
+# =============================================================================
+# ENVIRONMENT & CONFIGURATION
+# =============================================================================
+python-dotenv==1.0.0
+
+# =============================================================================
+# DATABASE
+# =============================================================================
+# Using SQLite (built into Python)
+
+# =============================================================================
+# PRODUCTION SERVER
+# =============================================================================
+gunicorn==21.2.0
+gevent==23.7.0
+
+# =============================================================================
+# TESTING
+# =============================================================================
+pytest==7.4.2
+pytest-cov==4.1.0
+
+# =============================================================================
+# DATA PROCESSING
+# =============================================================================
+# Using built-in json, csv modules
+
+# =============================================================================
+# SECURITY & VALIDATION
+# =============================================================================
+# Using built-in modules for validation
+
+# =============================================================================
+# DEVELOPMENT TOOLS (Optional)
+# =============================================================================
+# black==23.10.1
+# flake8==6.1.0
+# mypy==1.7.0
+
+# =============================================================================
+# MONITORING & LOGGING (Optional)
+# =============================================================================
+# sentry-sdk==1.38.0
+
+# =============================================================================
+# EMAIL MARKETING INTEGRATION (Optional)
+# =============================================================================
+# mailchimp3==3.0.21
+
+# =============================================================================
+# CLOUD STORAGE (Optional)
+# =============================================================================
+# boto3==1.34.0  # For AWS S3 integration
+# google-cloud-storage==2.10.0  # For Google Cloud Storage
+
+# =============================================================================
+# CACHING (Optional - for Redis support)
+# =============================================================================
+# redis==5.0.1
+# flask-caching==2.1.0
+
+# =============================================================================
+# API DOCUMENTATION (Optional)
+# =============================================================================
+# flask-restx==1.3.0
+
+# =============================================================================
+# PACKAGE VERSIONS EXPLANATION
+# =============================================================================
+
+# Flask 2.3.3 - Stable web framework
+# Flask-CORS 4.0.0 - Cross-origin resource sharing for API
+# requests 2.31.0 - HTTP library for web scraping and API calls
+# beautifulsoup4 4.12.2 - HTML parsing for website analysis
+# lxml 4.9.3 - XML/HTML parser (faster than html.parser)
+# openai 0.28.1 - OpenAI API client (compatible version)
+# stripe 7.8.0 - Payment processing for $997 audits
+# reportlab 4.0.4 - PDF generation for premium reports
+# Pillow 10.1.0 - Image processing for PDF reports
+# python-dotenv 1.0.0 - Environment variable management
+# gunicorn 21.2.0 - Production WSGI server
+# gevent 23.7.0 - Async workers for better I/O performance
+# pytest 7.4.2 - Testing framework
+
+# =============================================================================
+# INSTALLATION INSTRUCTIONS
+# =============================================================================
+
+# 1. Create virtual environment:
+#    python -m venv venv
+#    source venv/bin/activate  # Linux/Mac
+#    venv\Scripts\activate     # Windows
+
+# 2. Install dependencies:
+#    pip install -r requirements.txt
+
+# 3. For development with optional tools:
+#    pip install -r requirements.txt black flake8 mypy
+
+# 4. For production with monitoring:
+#    pip install -r requirements.txt sentry-sdk
+
+# =============================================================================
+# COMPATIBILITY NOTES
+# =============================================================================
+
+# Python 3.8+ required
+# Compatible with Python 3.8, 3.9, 3.10, 3.11, 3.12
+
+# Operating System Compatibility:
+# - Linux (recommended for production)
+# - macOS (development)
+# - Windows (development)
+
+# =============================================================================
+# SECURITY CONSIDERATIONS
+# =============================================================================
+
+# All packages are pinned to specific versions for security
+# Regular updates recommended (check for vulnerabilities)
+# Use pip-audit for security scanning:
+# pip install pip-audit
+# pip-audit
+
+# =============================================================================
+# PERFORMANCE NOTES
+# =============================================================================
+
+# gevent provides async I/O for better performance
+# lxml is faster than html.parser for large websites
+# Pillow required for image processing in PDF reports
+# gunicorn recommended for production deployment
+
+# =============================================================================
+# TROUBLESHOOTING COMMON ISSUES
+# =============================================================================
+
+# Issue: lxml installation fails
+# Solution: Install system dependencies first
+# Ubuntu/Debian: sudo apt-get install libxml2-dev libxslt-dev
+# CentOS/RHEL: sudo yum install libxml2-devel libxslt-devel
+# macOS: brew install libxml2 libxslt
+
+# Issue: Pillow installation fails
+# Solution: Install system dependencies
+# Ubuntu/Debian: sudo apt-get install libjpeg-dev zlib1g-dev
+# CentOS/RHEL: sudo yum install libjpeg-devel zlib-devel
+# macOS: brew install jpeg zlib
+
+# Issue: gevent installation fails on Windows
+# Solution: Install Microsoft Visual C++ Build Tools
+# Or use: pip install gevent --force-reinstall --no-cache-dir
+
+# Issue: OpenAI API version conflicts
+# Solution: Use specific version (0.28.1 for legacy, 1.x for new API)
+# Legacy: pip install openai==0.28.1
+# New: pip install openai>=1.0.0
+
+# =============================================================================
+# DEPLOYMENT CONSIDERATIONS
+# =============================================================================
+
+# Production deployment requires:
+# - gunicorn (included)
+# - gevent (included)
+# - All environment variables configured
+# - SSL certificates for HTTPS
+# - Proper firewall configuration
+# - Regular backups of database and reports
+
+# Docker deployment:
+# FROM python:3.11-slim
+# COPY requirements.txt .
+# RUN pip install -r requirements.txt
+# COPY . .
+# CMD ["gunicorn", "--workers", "4", "--bind", "0.0.0.0:5000", "app:create_app()"]
