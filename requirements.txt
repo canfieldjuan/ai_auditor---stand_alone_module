@@ -35,7 +35,7 @@ Pillow==10.1.0
 # =============================================================================
 # EMAIL & COMMUNICATION
 # =============================================================================
-# Built-in smtplib used for email (no additional dependencies)
+resend==2.10.0
 
 # =============================================================================
 # ENVIRONMENT & CONFIGURATION
@@ -116,6 +116,7 @@ pytest-cov==4.1.0
 # stripe 7.8.0 - Payment processing for $997 audits
 # reportlab 4.0.4 - PDF generation for premium reports
 # Pillow 10.1.0 - Image processing for PDF reports
+# resend 2.10.0 - Professional email delivery service
 # python-dotenv 1.0.0 - Environment variable management
 # gunicorn 21.2.0 - Production WSGI server
 # gevent 23.7.0 - Async workers for better I/O performance

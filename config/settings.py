@@ -22,7 +22,7 @@ STATIC_DIR = os.getenv('STATIC_DIR', 'static')
 
 # Email Configuration - Resend API
 RESEND_API_KEY = os.getenv('RESEND_API_KEY', '')
-FROM_EMAIL = os.getenv('FROM_EMAIL', 'noreply@yourdomain.com')  # Your verified domain email
+FROM_EMAIL = os.getenv('FROM_EMAIL', 'noreply@aiauditortool.com')  # Your verified domain email
 FROM_NAME = os.getenv('FROM_NAME', 'Premium AI SEO Audit')
 RESEND_FROM_EMAIL = FROM_EMAIL  # Alias for backward compatibility
 
@@ -47,12 +47,12 @@ try:
     PREMIUM_PRICE = int(os.getenv('PREMIUM_PRICE', '997'))
 except ValueError:
     PREMIUM_PRICE = 997
-    
+
 try:
     PREMIUM_SLOTS_PER_MONTH = int(os.getenv('PREMIUM_SLOTS_PER_MONTH', '20'))
 except ValueError:
     PREMIUM_SLOTS_PER_MONTH = 20
-    
+
 try:
     PREMIUM_DELIVERY_HOURS = int(os.getenv('PREMIUM_DELIVERY_HOURS', '24'))
 except ValueError:
@@ -60,20 +60,20 @@ except ValueError:
 
 # Business Configuration
 COMPANY_NAME = os.getenv('COMPANY_NAME', 'Premium AI SEO Audit')
-SUPPORT_EMAIL = os.getenv('SUPPORT_EMAIL', 'support@yourdomain.com')
-BUSINESS_URL = os.getenv('BUSINESS_URL', 'https://yourdomain.com')
+SUPPORT_EMAIL = os.getenv('SUPPORT_EMAIL', 'support@aiauditortool.com')
+BUSINESS_URL = os.getenv('BUSINESS_URL', 'https://aiauditortool.com')
 
 # Rate Limiting
 try:
     RATE_LIMIT_PER_IP = int(os.getenv('RATE_LIMIT_PER_IP', '100'))
 except ValueError:
     RATE_LIMIT_PER_IP = 100
-    
+
 try:
     RATE_LIMIT_PER_EMAIL = int(os.getenv('RATE_LIMIT_PER_EMAIL', '50'))
 except ValueError:
     RATE_LIMIT_PER_EMAIL = 50
-    
+
 try:
     RATE_LIMIT_WINDOW = int(os.getenv('RATE_LIMIT_WINDOW', '3600'))
 except ValueError:
@@ -84,7 +84,7 @@ try:
     CACHE_TTL = int(os.getenv('CACHE_TTL', '7200'))
 except ValueError:
     CACHE_TTL = 7200
-    
+
 try:
     PREMIUM_CACHE_TTL = int(os.getenv('PREMIUM_CACHE_TTL', '0'))
 except ValueError:
@@ -103,7 +103,7 @@ try:
     VISITOR_VALUE_USD = int(os.getenv('VISITOR_VALUE_USD', '50'))
 except ValueError:
     VISITOR_VALUE_USD = 50
-    
+
 try:
     CONVERSION_RATE = float(os.getenv('CONVERSION_RATE', '0.02'))
 except ValueError:
@@ -121,11 +121,21 @@ try:
     MAX_CONCURRENT_AUDITS = int(os.getenv('MAX_CONCURRENT_AUDITS', '5'))
 except ValueError:
     MAX_CONCURRENT_AUDITS = 5
-    
+
 try:
     AUDIT_TIMEOUT_SECONDS = int(os.getenv('AUDIT_TIMEOUT_SECONDS', '300'))
 except ValueError:
     AUDIT_TIMEOUT_SECONDS = 300
+
+# ✅ **FIXED: Added the missing ENABLED_MODULES configuration**
+ENABLED_MODULES = [
+    'technical_seo',
+    'content',
+    'keywords',
+    'backlinks',
+    'recommendations',
+    'quick_wins',
+]
 
 # Feature Flags
 ENABLE_FREE_AUDITS = os.getenv('ENABLE_FREE_AUDITS', 'True').lower() == 'true'
